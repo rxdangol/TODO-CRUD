@@ -92,6 +92,8 @@ display.addEventListener("click", (e) => {
       .then((res) => res.json())
       .then(() => location.reload());
   }
+  
+  //Edit Post 
   if (editBtn) {
     const parent =
       e.target.parentElement.parentElement.parentElement.parentElement;
@@ -103,7 +105,8 @@ display.addEventListener("click", (e) => {
     priorityValue.value = 0;
     descriptionValue.value = descriptionContent;
   }
-
+  //Complete Post 
+  
   if (completeBtn) {
     fetch(`${url}/${id}`, {
       method: "PUT",
@@ -115,7 +118,7 @@ display.addEventListener("click", (e) => {
       }),
     })
       .then((res) => res.json())
-      .then(() => {});
+      .then(() => {}); // I am unable to do the complete action to cut the title name and remove the complete and edit button..
   }
 
   // Update Data
